@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
+import { SiteChrome } from "@/components/SiteChrome";
 import "./globals.css";
 
 const siteUrl =
@@ -43,9 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

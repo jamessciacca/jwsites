@@ -36,6 +36,35 @@ textarea {
   -webkit-tap-highlight-color: transparent;
 }
 
+input[type="date"] {
+  display: block;
+  inline-size: 100%;
+  width: 100%;
+  min-inline-size: 0;
+  min-width: 0;
+  max-inline-size: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="date"]::-webkit-date-and-time-value {
+  display: block;
+  width: 100%;
+  min-inline-size: 0;
+  min-width: 0;
+  text-align: left;
+}
+
+@supports (-webkit-touch-callout: none) {
+  input[type="date"] {
+    width: -webkit-fill-available;
+    max-width: -webkit-fill-available;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 16px;
+  }
+}
+
 @layer components {
   .container-site {
     @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;

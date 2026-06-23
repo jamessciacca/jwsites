@@ -9,77 +9,56 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
-import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet James Sciacca, the Rutgers Computer Science graduate behind JWSites, and learn how JWSites helps local businesses build a stronger online presence.",
+    "Learn how JWSites combines a Rutgers Computer Science background with clear communication and dependable support for local businesses.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        eyebrow="About JWSites"
-        title="Small businesses deserve a website they’re proud to share."
-        text="Founded by James Sciacca, JWSites makes modern web design and dependable website support more approachable for local businesses."
-      />
-      <section className="pb-20 sm:pb-28">
-        <div className="container-site grid gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#eae8ff] via-[#c9c5ff] to-[#7c7de8] p-6 sm:p-10">
-            <div className="absolute -right-16 -top-16 size-56 rounded-full bg-white/50 blur-3xl" />
-            <div className="relative flex h-full min-h-[370px] flex-col justify-between rounded-[1.7rem] border border-white/50 bg-white/85 p-8 shadow-soft backdrop-blur-md">
-              <div className="flex size-14 items-center justify-center rounded-2xl bg-accent text-xl font-bold text-white">
-                JS
-              </div>
-              <blockquote className="max-w-md text-3xl font-semibold leading-tight tracking-[-0.04em] sm:text-4xl">
-                “Good design should make your business feel clearer—not more
-                complicated.”
-              </blockquote>
-              <p className="text-sm font-medium text-muted">
-                Rutgers Computer Science · Full-stack development · Web hosting
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <span className="eyebrow">Meet the founder</span>
-            <h2 className="display">Built by James Sciacca.</h2>
-            <div className="mt-7 space-y-5 text-base leading-8 text-muted">
+      <section className="bg-hero-glow pb-20 pt-32 sm:pb-28 sm:pt-40">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="eyebrow">Founder-led web design</span>
+            <h2 className="display">
+              Built with technical skill and local-business focus.
+            </h2>
+            <div className="mt-7 space-y-5 text-base leading-7 text-muted sm:leading-8">
               <p>
-                JWSites was founded by James Sciacca, a Rutgers University
-                graduate with a degree in Computer Science. James has
-                experience in full-stack development, web hosting, and building
-                modern websites that are fast, professional, and easy to
-                maintain.
+                JWSites was founded by James Sciacca to make professional web
+                design more approachable for small businesses. With a Computer
+                Science background from Rutgers University and experience in
+                full-stack development, the focus is on building websites that
+                are fast, polished, easy to maintain, and simple for customers
+                to use.
               </p>
               <p>
-                JWSites was created to help local businesses build a stronger
-                online presence without dealing with confusing technology,
-                outdated website builders, or overpriced agency packages. The
-                goal is simple: create clean, reliable websites that help
-                businesses look credible and make it easier for customers to
-                reach them.
+                Every project is designed around clear communication,
+                dependable support, and practical results. The goal is not to
+                overcomplicate the process—it is to give business owners a
+                website that looks credible, works smoothly, and helps more
+                customers reach them.
               </p>
               <p>
-                You can learn more about James and view his personal portfolio
-                at{" "}
+                Additional work and technical projects can be viewed through{" "}
                 <a
                   href="https://www.jamessciacca.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1 font-semibold text-accent underline decoration-accent/30 underline-offset-4 transition hover:decoration-accent"
                 >
-                  www.jamessciacca.com
+                  James Sciacca’s portfolio
                   <ExternalLink size={14} aria-hidden="true" />
                 </a>
                 .
               </p>
             </div>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button href="/contact" arrow>
-                Tell us about your business
+                Start a Website Project
               </Button>
               <a
                 href="https://www.jamessciacca.com"
@@ -87,7 +66,7 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-line bg-white px-6 py-3 text-sm font-semibold text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-gray-300 hover:bg-surface"
               >
-                James’s Portfolio <ExternalLink size={15} />
+                View Portfolio <ExternalLink size={15} />
               </a>
             </div>
           </div>

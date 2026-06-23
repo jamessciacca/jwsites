@@ -13,9 +13,8 @@ import {
 import { CTASection } from "@/components/CTASection";
 import { HostingMaintenance } from "@/components/HostingMaintenance";
 import { PageHero } from "@/components/PageHero";
-import { PricingCard } from "@/components/PricingCard";
+import { PricingPreview } from "@/components/PricingPreview";
 import { ServiceCard } from "@/components/ServiceCard";
-import { pricingTiers } from "@/data/pricing";
 
 export const metadata: Metadata = {
   title: "Website Services",
@@ -98,18 +97,20 @@ export default function ServicesPage() {
       <section className="section-pad bg-surface">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow">Choose your service level</span>
-            <h2 className="display">A clear starting point for every business.</h2>
+            <span className="eyebrow">One website standard</span>
+            <h2 className="display">Premium quality is not an upgrade.</h2>
             <p className="body-large mt-6">
-              Each package includes the essentials for a professional website.
-              Choose the level closest to your needs, and we will confirm the
-              details before work begins.
+              Every client receives the same professionally designed custom
+              website for a $500 one-time build fee. Monthly plans determine
+              the hosting, support, maintenance, SEO, and domain service
+              JWSites provides after launch.
             </p>
           </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {pricingTiers.map((tier) => (
-              <PricingCard key={tier.name} {...tier} />
-            ))}
+          <div className="mt-12">
+            <PricingPreview
+              heading="Custom design, one clear price."
+              text="No starter templates or reduced-quality tiers. Your website receives the same careful design, responsive build, and launch support for $500."
+            />
           </div>
         </div>
       </section>

@@ -17,11 +17,10 @@ import {
 import { Button } from "@/components/Button";
 import { ConceptCard } from "@/components/ConceptCard";
 import { CTASection } from "@/components/CTASection";
-import { PricingCard } from "@/components/PricingCard";
+import { PricingPreview } from "@/components/PricingPreview";
 import { SectionHeading } from "@/components/SectionHeading";
 import { ServiceCard } from "@/components/ServiceCard";
 import { concepts } from "@/data/concepts";
-import { pricingTiers } from "@/data/pricing";
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
 const values = [
   [Clock3, "Fast turnaround"],
   [MonitorSmartphone, "Mobile-friendly"],
-  [ShieldCheck, "Hosting & care included"],
+  [ShieldCheck, "Optional ongoing support"],
   [Check, "Simple pricing"],
   [Globe2, "Built for local business"],
 ] as const;
@@ -121,7 +120,7 @@ export default function Home() {
             </Button>
           </div>
 
-          <div className="relative mx-auto mt-16 max-w-5xl animate-fade-up animate-delay-2 sm:mt-20">
+          <div className="relative mx-auto mt-16 hidden max-w-5xl animate-fade-up animate-delay-2 sm:mt-20 sm:block">
             <div className="absolute inset-x-16 bottom-0 h-24 bg-accent/20 blur-[70px]" />
             <div className="relative rounded-[1.5rem] border border-gray-200 bg-white p-2 shadow-soft sm:rounded-[2rem] sm:p-3">
               <div className="overflow-hidden rounded-[1.1rem] border border-line bg-surface sm:rounded-[1.4rem]">
@@ -205,7 +204,7 @@ export default function Home() {
 
       <section className="section-pad bg-ink text-white">
         <div className="container-site grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
-          <div className="relative min-h-80 overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#d9d6ff] via-[#9d9df2] to-accent p-7">
+          <div className="relative hidden min-h-80 overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#d9d6ff] via-[#9d9df2] to-accent p-7 lg:block">
             <div className="absolute -right-16 -top-16 size-56 rounded-full bg-white/30 blur-3xl" />
             <div className="relative flex h-full min-h-64 flex-col justify-between rounded-[1.4rem] border border-white/40 bg-white/90 p-7 text-ink shadow-soft">
               <div className="flex size-12 items-center justify-center rounded-2xl bg-accent text-lg font-bold text-white">
@@ -261,7 +260,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Website Concepts"
               title="See what your business could look like online."
-              text="Explore sample websites created by JWSites to show what we can build for restaurants, contractors, wellness offices, and other local businesses."
+              text="Explore sample websites created by JWSites to show what we can build for restaurants, landscaping companies, barber shops, and other local businesses."
             />
             <Button href="/concepts" variant="secondary" arrow>
               Explore all concepts
@@ -309,20 +308,13 @@ export default function Home() {
       <section className="section-pad bg-surface">
         <div className="container-site">
           <SectionHeading
-            eyebrow="Clear starting points"
-            title="Professional websites. Straightforward pricing."
-            text="Choose the package closest to what you need. Every project starts with a conversation and can be tailored to your business."
+            eyebrow="Simple, transparent pricing"
+            title="The same premium website for every client."
+            text="Your custom website is a one-time $500 investment. Choose Starter, Professional, or Premium for ongoing hosting, maintenance, support, edits, SEO, and domain service after launch."
             align="center"
           />
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            {pricingTiers.map((tier) => (
-              <PricingCard key={tier.name} {...tier} />
-            ))}
-          </div>
-          <div className="mt-10 text-center">
-            <Button href="/pricing" variant="secondary" arrow>
-              View Pricing
-            </Button>
+          <div className="mt-12">
+            <PricingPreview />
           </div>
         </div>
       </section>

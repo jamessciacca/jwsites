@@ -1,50 +1,97 @@
-export const pricingTiers = [
+export const customWebsiteOffer = {
+  planId: "website-build-only",
+  name: "Custom Website",
+  contactName: "Custom Website — Build Only",
+  price: "$500",
+  label: "One-Time Investment",
+  description:
+    "One professionally designed custom website, built around your business and ready to launch.",
+  features: [
+    "Fully custom website",
+    "Mobile responsive",
+    "Fast loading",
+    "Contact form",
+    "Modern professional design",
+    "Google Maps integration",
+    "Social media links",
+    "Basic on-page SEO",
+    "Domain connection setup",
+    "Launch assistance",
+  ],
+};
+
+export const monthlyPlans = [
   {
-    name: "Starter Site",
+    planId: "starter-plan",
+    name: "Starter Plan",
+    price: "$49",
+    cadence: "/mo",
     description:
-      "Best for small businesses that need a clean online presence.",
-    price: "$799 setup",
-    maintenance: "$99/month maintenance available",
+      "Best for small businesses that want a simple, professional online presence.",
+    buildPrice: "$500 one-time website build",
+    domain: "Domain paid separately at registration cost",
     features: [
-      "1–3 pages",
+      "Fast, secure hosting",
+      "SSL setup",
+      "Basic maintenance",
       "Mobile-friendly design",
-      "Contact form",
-      "Basic SEO setup",
-      "Hosting setup",
-      "Small monthly updates available",
+      "Contact form setup",
+      "Basic support",
     ],
+    cta: "Choose Starter",
   },
   {
-    name: "Business Site",
+    planId: "professional-plan",
+    name: "Professional Plan",
+    price: "$79",
+    cadence: "/mo",
     description:
-      "Best for businesses that want a stronger, more complete website.",
-    price: "$1,499 setup",
-    maintenance: "$149/month maintenance available",
+      "Recommended for most local businesses that want stronger visibility and faster ongoing help.",
+    buildPrice: "$500 one-time website build",
+    domain: "First-year domain included; JWSites purchases and configures it",
     features: [
-      "4–6 pages",
-      "Custom design",
-      "Service pages",
-      "Contact form",
-      "Google Analytics setup",
-      "Basic SEO setup",
-      "Monthly updates available",
+      "Everything in Starter",
+      "Stronger SEO setup",
+      "Google Business Profile support",
+      "Priority edits",
+      "Analytics setup",
+      "Improved content sections",
     ],
+    cta: "Choose Professional",
     featured: true,
   },
   {
-    name: "Premium Site",
+    planId: "premium-plan",
+    name: "Premium Plan",
+    price: "$119",
+    cadence: "/mo",
     description:
-      "Best for businesses that want a polished, high-end website.",
-    price: "$2,499 setup",
-    maintenance: "$249/month maintenance available",
+      "Best for businesses that want the most hands-off website management and ongoing growth support.",
+    buildPrice: "$500 one-time website build",
+    domain: "First-year domain included; JWSites purchases and configures it",
     features: [
-      "7+ pages",
-      "Advanced design",
-      "Portfolio or gallery sections",
-      "Booking or quote request flow",
-      "SEO-focused page structure",
-      "Analytics setup",
-      "Priority support",
+      "Everything in Professional",
+      "Ongoing SEO improvements",
+      "Monthly content updates",
+      "Faster support",
+      "Performance checks",
+      "Expanded page and section updates",
     ],
+    cta: "Choose Premium",
   },
 ];
+
+export const pricingSelections = [
+  {
+    id: customWebsiteOffer.planId,
+    name: customWebsiteOffer.contactName,
+  },
+  ...monthlyPlans.map((plan) => ({
+    id: plan.planId,
+    name: plan.name,
+  })),
+];
+
+export function getPlanContactHref(planId: string) {
+  return `/contact?plan=${encodeURIComponent(planId)}#contact-form`;
+}

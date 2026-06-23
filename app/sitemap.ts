@@ -11,8 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/pricing",
     "/concepts",
     "/concepts/restaurant",
-    "/concepts/contractor",
-    "/concepts/dental",
+    "/concepts/landscaping",
+    "/concepts/barber",
     "/about",
     "/contact",
   ];

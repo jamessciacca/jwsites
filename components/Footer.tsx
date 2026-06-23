@@ -14,7 +14,7 @@ const services = [
   ["Website Design", "/services"],
   ["Website Redesigns", "/services"],
   ["Hosting & Maintenance", "/services"],
-  ["Website Packages", "/pricing"],
+  ["Website Pricing", "/pricing"],
   ["Basic SEO", "/services"],
 ];
 
@@ -76,12 +76,6 @@ export function Footer() {
           >
             Start a conversation <ArrowUpRight size={16} />
           </Link>
-          <a
-            href="mailto:jsciacca03@gmail.com"
-            className="mt-3 block text-sm text-gray-500 transition hover:text-white"
-          >
-            jsciacca03@gmail.com
-          </a>
         </div>
       </div>
       <div className="border-t border-white/10">

@@ -7,7 +7,7 @@ import { concepts } from "@/data/concepts";
 export const metadata: Metadata = {
   title: "Website Concepts",
   description:
-    "Explore honest sample website concepts by JWSites for restaurants, contractors, and dental offices. These are concept designs, not client projects.",
+    "Explore honest sample website concepts by JWSites for restaurants, landscaping companies, and barber shops. These are concept designs, not client projects.",
 };
 
 export default function ConceptsPage() {

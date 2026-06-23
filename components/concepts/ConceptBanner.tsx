@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, FlaskConical } from "lucide-react";
+import { ArrowLeft, ArrowRight, FlaskConical } from "lucide-react";
 
 type ConceptBannerProps = {
   tone?: "warm" | "strong" | "calm";
@@ -19,12 +19,21 @@ export function ConceptBanner({ tone = "warm" }: ConceptBannerProps) {
           <FlaskConical size={16} className="shrink-0" aria-hidden="true" />
           Concept website by JWSites — this sample is not a real business.
         </p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 self-start rounded-full bg-white px-4 py-2 text-xs font-bold text-ink transition hover:-translate-y-0.5 sm:self-auto"
-        >
-          Start a site like this <ArrowRight size={14} aria-hidden="true" />
-        </Link>
+        <div className="flex flex-wrap items-center gap-2">
+          <Link
+            href="/concepts"
+            className="inline-flex items-center gap-2 rounded-full border border-white/25 px-4 py-2 text-xs font-bold transition hover:-translate-y-0.5 hover:bg-white/10"
+          >
+            <ArrowLeft size={14} aria-hidden="true" />
+            Back to JWSites
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold text-ink transition hover:-translate-y-0.5"
+          >
+            Start a site like this <ArrowRight size={14} aria-hidden="true" />
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { pricingSelections } from "@/data/pricing";
 
 export const runtime = "nodejs";
 
@@ -8,8 +9,11 @@ type ContactPayload = {
   business?: unknown;
   email?: unknown;
   phone?: unknown;
+  businessType?: unknown;
   website?: unknown;
+  preferredDomain?: unknown;
   message?: unknown;
+  selectedPlan?: unknown;
   company?: unknown;
 };
 
@@ -56,12 +60,21 @@ export async function POST(request: Request) {
     const business = readField(body.business, 120);
     const email = readField(body.email, 160);
     const phone = readField(body.phone, 50);
+    const businessType = readField(body.businessType, 120);
     const website = readField(body.website, 300);
+    const preferredDomain = readField(body.preferredDomain, 250);
     const message = readField(body.message, 5000);
+    const requestedPlan = readField(body.selectedPlan, 120);
+    const selectedPlan =
+      pricingSelections.find((plan) => plan.name === requestedPlan)?.name ||
+      "General website inquiry";
 
-    if (!name || !email || !message) {
+    if (!name || !business || !email || !phone || !businessType || !message) {
       return NextResponse.json(
-        { error: "Please complete your name, email, and message." },
+        {
+          error:
+            "Please complete your name, business name, email, phone number, business type, and project description.",
+        },
         { status: 400 },
       );
     }
@@ -95,12 +108,15 @@ export async function POST(request: Request) {
 
     const resend = new Resend(apiKey);
     const rows = [
+      ["Selected Package", selectedPlan],
       ["Name", name],
-      ["Business Name", business || "Not provided"],
+      ["Business Name", business],
       ["Email", email],
-      ["Phone", phone || "Not provided"],
+      ["Phone", phone],
+      ["Business Type", businessType],
       ["Current Website", website || "Not provided"],
-      ["Message", message],
+      ["Preferred Domain", preferredDomain || "Not provided"],
+      ["Additional Details", message],
     ];
 
     const htmlRows = rows
@@ -117,7 +133,7 @@ export async function POST(request: Request) {
       from: `JWSites Website <${fromEmail}>`,
       to: CONTACT_TO_EMAIL,
       replyTo: email,
-      subject: `New JWSites inquiry from ${name}${business ? ` — ${business}` : ""}`,
+      subject: `New JWSites inquiry — ${selectedPlan} — ${business}`,
       html: `
         <div style="font-family:Arial,sans-serif;color:#0a0a0b;max-width:680px;margin:0 auto">
           <h1 style="font-size:24px;margin-bottom:8px">New website inquiry</h1>

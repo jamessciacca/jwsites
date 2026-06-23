@@ -20,7 +20,7 @@ export function DemoSection({
   align = "left",
 }: DemoSectionProps) {
   return (
-    <section id={id} className={`px-5 py-20 sm:px-8 sm:py-24 lg:py-28 ${className}`}>
+    <section id={id} className={`px-5 py-16 sm:px-8 sm:py-20 lg:py-24 ${className}`}>
       <div className={`mx-auto max-w-7xl ${contentClassName}`}>
         <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
           {eyebrow && (
@@ -37,7 +37,7 @@ export function DemoSection({
             </p>
           )}
         </div>
-        {children && <div className="mt-12">{children}</div>}
+        {children && <div className="mt-10 sm:mt-12">{children}</div>}
       </div>
     </section>
   );
