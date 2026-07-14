@@ -3,7 +3,7 @@ import { ChevronDown } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { CustomWebsiteCard } from "@/components/CustomWebsiteCard";
 import { SupportPlanCard } from "@/components/SupportPlanCard";
-import { complexBusinessWebsite, portfolioPlans } from "@/data/pricing";
+import { portfolioPlans } from "@/data/pricing";
 
 export const metadata: Metadata = {
   title: "Website & Portfolio Pricing",
@@ -71,16 +71,6 @@ export default function PricingPage() {
             {portfolioPlans.map((plan, index) => (
               <SupportPlanCard key={plan.name} {...plan} featured={index === 1} />
             ))}
-          </div>
-          <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-line bg-white px-6 py-5 text-sm leading-7 text-muted shadow-sm">
-            <p>
-              Reasonable content updates are included with ongoing service. More
-              involved business websites, including booking systems, extensive
-              galleries or menus, ecommerce, or custom functionality, are{" "}
-              <span className="font-semibold text-ink">{complexBusinessWebsite.price}</span>.
-              Larger additions and new functionality can be quoted separately
-              before any work begins.
-            </p>
           </div>
         </div>
       </section>
