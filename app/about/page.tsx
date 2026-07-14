@@ -13,23 +13,23 @@ import { CTASection } from "@/components/CTASection";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn how JWSites combines a Rutgers Computer Science background with clear communication and dependable support for local businesses.",
+    "Learn how JWSites combines a Rutgers Computer Science background with clear communication and dependable support for businesses and individuals.",
 };
 
 export default function AboutPage() {
   return (
     <>
-      <section className="bg-hero-glow pb-20 pt-32 sm:pb-28 sm:pt-40">
+      <section className="bg-hero-glow pb-16 pt-32 sm:pb-20 sm:pt-36">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
             <span className="eyebrow">Founder-led web design</span>
             <h2 className="display">
-              Built with technical skill and local-business focus.
+              Built with technical skill and a personal approach.
             </h2>
             <div className="mt-7 space-y-5 text-base leading-7 text-muted sm:leading-8">
               <p>
                 JWSites was founded by James Sciacca to make professional web
-                design more approachable for small businesses. With a Computer
+                design more approachable for small businesses and individuals. With a Computer
                 Science background from Rutgers University and experience in
                 full-stack development, the focus is on building websites that
                 are fast, polished, easy to maintain, and simple for customers
@@ -38,9 +38,8 @@ export default function AboutPage() {
               <p>
                 Every project is designed around clear communication,
                 dependable support, and practical results. The goal is not to
-                overcomplicate the process—it is to give business owners a
-                website that looks credible, works smoothly, and helps more
-                customers reach them.
+                overcomplicate the process—it is to give each client a website
+                that looks credible, works smoothly, and represents their goals.
               </p>
               <p>
                 Additional work and technical projects can be viewed through{" "}
@@ -79,7 +78,7 @@ export default function AboutPage() {
             <span className="eyebrow">How we work</span>
             <h2 className="display">Professional, personal, and grounded.</h2>
           </div>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
             {[
               [GraduationCap, "Technical foundation", "A Computer Science background supports careful, maintainable website builds."],
               [MessagesSquare, "Simple communication", "Clear updates, plain language, and no making you chase answers."],

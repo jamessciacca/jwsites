@@ -1,145 +1,108 @@
 import type { Metadata } from "next";
-import {
-  ChevronDown,
-  ShieldCheck,
-} from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { CustomWebsiteCard } from "@/components/CustomWebsiteCard";
-import { DomainSetupOwnership } from "@/components/DomainSetupOwnership";
 import { SupportPlanCard } from "@/components/SupportPlanCard";
-import { WebsiteInvestmentValue } from "@/components/WebsiteInvestmentValue";
-import { WhyChooseJWSites } from "@/components/WhyChooseJWSites";
-import { monthlyPlans } from "@/data/pricing";
+import { complexBusinessWebsite, portfolioPlans } from "@/data/pricing";
 
 export const metadata: Metadata = {
-  title: "Website Pricing",
+  title: "Website & Portfolio Pricing",
   description:
-    "Every custom website is $500, with clear Starter, Professional, and Premium monthly plans for hosting, support, maintenance, and growth.",
+    "Transparent pricing for small-business websites and personal portfolios, with hosting, support, maintenance, and reasonable content updates included.",
 };
 
 const faqs = [
   {
+    question: "What counts as a routine content update?",
+    answer:
+      "Reasonable content updates include changes to existing text, images, résumé files, projects, skills, contact information, business hours, and testimonials. These ordinary updates are included in your ongoing plan.",
+  },
+  {
+    question: "Will I receive an unexpected charge for an update?",
+    answer:
+      "No. Routine content updates are included. If a request is a larger addition or new functionality, JWSites will explain the scope and provide a separate quote before any work begins.",
+  },
+  {
     question: "How long does a website take?",
     answer:
-      "Most websites are completed within two to four weeks once the needed content, photos, and business information are ready. A clear timeline is provided before work begins.",
+      "Most small websites are completed within two to four weeks once the needed content, photos, and information are ready. A clear timeline is provided before work begins.",
   },
   {
     question: "Can I use my own domain?",
     answer:
-      "Yes. JWSites can connect a domain you already own. On Starter, a new domain is paid separately at the registration cost. Professional and Premium include the first year of a new domain, which JWSites purchases and configures for you.",
+      "Yes. JWSites can connect a domain you already own or help connect a new one. Any domain registration or renewal cost is confirmed clearly with you.",
   },
   {
-    question: "Who owns my domain?",
+    question: "What happens if I end ongoing service?",
     answer:
-      "The domain represents your business. JWSites can manage the technical setup and registration, and you can request a domain transfer if you decide to move services later.",
-  },
-  {
-    question: "Can I cancel monthly service?",
-    answer:
-      "Yes. Monthly service can be canceled. We will explain the hosting and domain transition steps clearly. If your domain was included, future renewal or transfer costs may apply at the standard registration rate.",
-  },
-  {
-    question: "Can I update my own website?",
-    answer:
-      "Yes, that can be discussed during the project. Many clients prefer to send updates to JWSites so they do not have to manage the technical side themselves.",
-  },
-  {
-    question: "What happens if I don’t choose a monthly plan?",
-    answer:
-      "The website is yours. Monthly plans cover hosting and ongoing management. If you do not choose a plan, you will need to arrange your own hosting, domain registration, security, maintenance, and technical support.",
+      "We will explain the hosting and domain transition steps clearly. You will need another arrangement for hosting, security, maintenance, updates, and technical support.",
   },
 ];
 
 export default function PricingPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-hero-glow pb-16 pt-32 sm:pb-20 sm:pt-40">
+      <section className="relative overflow-hidden bg-hero-glow pb-14 pt-32 sm:pb-20 sm:pt-36">
         <div className="container-site text-center">
-          <span className="eyebrow animate-fade-up">No Hidden Fees</span>
-          <h1 className="page-display mx-auto max-w-4xl animate-fade-up animate-delay-1">
-            Simple, transparent pricing.
-          </h1>
+          <span className="eyebrow animate-fade-up">Clear from the start</span>
+          <h1 className="page-display mx-auto max-w-4xl animate-fade-up animate-delay-1">Simple, transparent pricing.</h1>
           <p className="body-large mx-auto mt-7 max-w-3xl animate-fade-up animate-delay-2">
-            Every business receives the same professionally designed custom
-            website. Choose the support plan that’s right for you after launch.
+            Choose a website for your business or a portfolio for yourself. Routine updates are included, and larger additions are always discussed before work begins.
           </p>
         </div>
       </section>
 
-      <section className="pb-20 sm:pb-24">
+      <section id="business-websites" className="scroll-mt-24 pb-16 sm:pb-20">
         <div className="container-site">
           <CustomWebsiteCard />
-          <p className="mx-auto mt-6 max-w-2xl text-center text-sm leading-6 text-muted">
-            Monthly service is optional and begins only after launch. The $500
-            website price is a separate, one-time investment.
-          </p>
         </div>
       </section>
 
-      <section id="monthly-plans" className="section-pad scroll-mt-24 bg-surface">
+      <section id="personal-portfolios" className="section-pad scroll-mt-24 bg-surface">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow">Monthly Service Plans</span>
-            <h2 className="display">Keep Your Website Running Smoothly</h2>
+            <span className="eyebrow">Personal Portfolios</span>
+            <h2 className="display">Put your work and experience in one polished place.</h2>
             <p className="body-large mt-6">
-              Every plan starts with the same $500 custom website build. Choose
-              the monthly level of hosting, support, maintenance, and growth
-              that fits your business.
+              Built for students, job seekers, developers, designers, freelancers, creatives, and professionals who want a stronger personal presence online.
             </p>
           </div>
-          <div className="mt-14 grid gap-6 lg:grid-cols-3 lg:items-stretch">
-            {monthlyPlans.map((plan) => (
-              <SupportPlanCard key={plan.name} {...plan} />
+          <div className="mx-auto mt-10 grid max-w-5xl gap-6 lg:grid-cols-2 lg:items-stretch">
+            {portfolioPlans.map((plan, index) => (
+              <SupportPlanCard key={plan.name} {...plan} featured={index === 1} />
             ))}
           </div>
-          <div className="mx-auto mt-12 flex max-w-4xl items-start gap-4 rounded-2xl border border-accent/15 bg-white p-5 shadow-sm">
-            <ShieldCheck className="mt-0.5 shrink-0 text-accent" size={22} />
-            <p className="text-sm leading-6 text-muted">
-              All websites require a one-time $500 custom build fee. Domain
-              names are billed separately on the Starter Plan and included for
-              the first year on Professional and Premium plans. Domain renewals
-              after the first year may be billed annually at the standard
-              registration cost.
+          <div className="mx-auto mt-10 max-w-5xl rounded-2xl border border-line bg-white px-6 py-5 text-sm leading-7 text-muted shadow-sm">
+            <p>
+              Reasonable content updates are included with ongoing service. More
+              involved business websites, including booking systems, extensive
+              galleries or menus, ecommerce, or custom functionality, are{" "}
+              <span className="font-semibold text-ink">{complexBusinessWebsite.price}</span>.
+              Larger additions and new functionality can be quoted separately
+              before any work begins.
             </p>
           </div>
         </div>
       </section>
 
-      <DomainSetupOwnership />
-
-      <WhyChooseJWSites />
-
-      <WebsiteInvestmentValue />
-
-      <section className="section-pad bg-surface">
+      <section className="section-pad bg-white">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
             <span className="eyebrow">Frequently Asked Questions</span>
             <h2 className="display">Clear answers before you begin.</h2>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4">
+          <div className="mx-auto mt-10 grid max-w-4xl gap-4">
             {faqs.map((faq, index) => (
-              <details
-                key={faq.question}
-                className="group rounded-2xl border border-line bg-white px-6 py-5 shadow-sm open:border-accent/25 open:shadow-card sm:px-7"
-                open={index === 0}
-              >
+              <details key={faq.question} className="group rounded-2xl border border-line bg-white px-6 py-5 shadow-sm open:border-accent/25 open:shadow-card sm:px-7" open={index === 0}>
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-semibold">
-                  {faq.question}
-                  <ChevronDown
-                    className="shrink-0 text-accent transition group-open:rotate-180"
-                    size={19}
-                  />
+                  {faq.question}<ChevronDown className="shrink-0 text-accent transition group-open:rotate-180" size={19} />
                 </summary>
-                <p className="mt-4 max-w-3xl border-t border-line pt-4 text-sm leading-7 text-muted">
-                  {faq.answer}
-                </p>
+                <p className="mt-4 max-w-3xl border-t border-line pt-4 text-sm leading-7 text-muted">{faq.answer}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
-
       <CTASection />
     </>
   );

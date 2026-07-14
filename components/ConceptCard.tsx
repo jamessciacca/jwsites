@@ -7,7 +7,7 @@ type ConceptCardProps = {
   type: string;
   description: string;
   href: string;
-  theme: "restaurant" | "landscaping" | "barber";
+  theme: "restaurant" | "landscaping" | "barber" | "art" | "professional" | "developer";
   image: string;
   imageAlt: string;
 };
@@ -16,6 +16,9 @@ const themes = {
   restaurant: "from-[#391814]/70 to-[#9e3c2c]/20",
   landscaping: "from-[#143b2a]/70 to-[#6f9b45]/20",
   barber: "from-black/80 to-[#9b7448]/20",
+  art: "from-[#241229]/75 to-[#d65f8c]/20",
+  professional: "from-[#10233b]/75 to-[#5d87c8]/20",
+  developer: "from-[#071b1f]/80 to-[#18a999]/20",
 };
 
 export function ConceptCard({

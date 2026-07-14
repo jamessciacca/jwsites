@@ -9,6 +9,7 @@ import { Button } from "./Button";
 const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/portfolio", label: "Personal Portfolios" },
   { href: "/pricing", label: "Pricing" },
   { href: "/concepts", label: "Concepts" },
   { href: "/about", label: "About" },
@@ -33,10 +34,12 @@ export function Navbar() {
           JW<span className="text-accent">Sites</span>
         </Link>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-5 lg:flex xl:gap-7">
           {links.map((link) => {
             const active =
-              link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              link.href === "/"
+                ? pathname === "/"
+                : !link.href.includes("#") && pathname.startsWith(link.href);
             return (
               <Link
                 key={link.href}

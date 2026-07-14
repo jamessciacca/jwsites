@@ -56,7 +56,7 @@ export default function BarberConceptPage() {
         <div className="relative mx-auto flex min-h-[620px] max-w-7xl items-center px-5 py-20 sm:min-h-[700px] sm:px-8 sm:py-24">
           <div className="max-w-3xl animate-fade-up">
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#c59a62]">Modern cuts · Traditional craft</p>
-            <h1 className="text-balance text-5xl font-black uppercase leading-[0.92] tracking-[-0.055em] sm:text-7xl lg:text-8xl">
+            <h1 className="text-balance text-4xl font-black uppercase leading-[0.92] tracking-[-0.04em] sm:text-7xl lg:text-8xl">
               Sharp Cuts.<br />Clean Fades.<br /><span className="text-[#c59a62]">Premium Grooming.</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-white/65">

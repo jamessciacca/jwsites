@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://jwsites.com";
+  "https://jwsites.net";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -10,6 +10,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/pricing",
     "/concepts",
+    "/portfolio",
+    "/portfolio/examples",
+    "/concepts/art-portfolio",
+    "/concepts/professional-portfolio",
+    "/concepts/developer-portfolio",
     "/concepts/restaurant",
     "/concepts/landscaping",
     "/concepts/barber",

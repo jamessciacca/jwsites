@@ -6,9 +6,9 @@ import {
   Mail,
   MonitorSmartphone,
   Paintbrush,
-  RefreshCw,
   Search,
   Server,
+  UserRound,
 } from "lucide-react";
 import { CTASection } from "@/components/CTASection";
 import { HostingMaintenance } from "@/components/HostingMaintenance";
@@ -19,15 +19,21 @@ import { ServiceCard } from "@/components/ServiceCard";
 export const metadata: Metadata = {
   title: "Website Services",
   description:
-    "Custom website design, mobile optimization, hosting, maintenance, SEO basics, analytics, and more for local businesses.",
+    "Custom small-business websites and personal portfolios, with mobile-friendly design, hosting, maintenance, support, and reasonable content updates.",
 };
 
 const services = [
   {
     icon: Paintbrush,
-    title: "Custom Website Design",
+    title: "Small-Business Websites",
     description:
       "Your business is not generic, and your website should not feel generic either. We create a clean, professional design around your brand, services, and customers.",
+  },
+  {
+    icon: UserRound,
+    title: "Personal Portfolios",
+    description:
+      "Showcase your experience, projects, skills, résumé, and contact details in a polished portfolio built for students, job seekers, developers, designers, freelancers, creatives, and professionals.",
   },
   {
     icon: MonitorSmartphone,
@@ -71,12 +77,6 @@ const services = [
     description:
       "A professional email address builds trust. We can point you toward a setup that matches your domain and fits the way your business works.",
   },
-  {
-    icon: RefreshCw,
-    title: "Website Redesigns",
-    description:
-      "If your current site feels dated, slow, or hard to use, we can rebuild it into a cleaner experience while keeping the parts that still serve you.",
-  },
 ];
 
 export default function ServicesPage() {
@@ -84,32 +84,32 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Everything your business website needs."
-        text="From the first design to ongoing updates, we take care of the details that make your website look credible and work well."
+        title="A polished website for your business—or for you."
+        text="From the first design to ongoing updates, we create and care for small-business websites and personal portfolios that look credible and work well."
       />
-      <section className="pb-10 sm:pb-16">
+      <section className="pb-8 sm:pb-12">
         <div className="container-site grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
       </section>
-      <section className="section-pad bg-surface">
+      <section id="personal-portfolios" className="section-pad scroll-mt-24 bg-surface">
         <div className="container-site">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="eyebrow">One website standard</span>
-            <h2 className="display">Premium quality is not an upgrade.</h2>
+            <span className="eyebrow">Personal Portfolios</span>
+            <h2 className="display">Give your work a professional home.</h2>
             <p className="body-large mt-6">
-              Every client receives the same professionally designed custom
-              website for a $500 one-time build fee. Monthly plans determine
-              the hosting, support, maintenance, SEO, and domain service
-              JWSites provides after launch.
+              Whether you are applying for internships, looking for your next
+              role, building a freelance practice, or presenting creative
+              work, your portfolio can make your experience easier to explore
+              and remember.
             </p>
           </div>
-          <div className="mt-12">
+          <div className="mt-10">
             <PricingPreview
-              heading="Custom design, one clear price."
-              text="No starter templates or reduced-quality tiers. Your website receives the same careful design, responsive build, and launch support for $500."
+              heading="One clear path for each kind of project."
+              text="Business websites include ongoing monthly care. Portfolio options include annual hosting, support, and reasonable content updates."
             />
           </div>
         </div>
@@ -126,7 +126,7 @@ export default function ServicesPage() {
               ["Plain-language guidance", "We explain the options clearly and help you choose what matters."],
               ["One reliable contact", "You always know who to talk to when you need something."],
               ["Built around your goals", "Every page has a job, from building trust to earning inquiries."],
-              ["Support after launch", "We do not disappear the moment your website goes live."],
+              ["Updates after launch", "Reasonable changes to existing content are included with ongoing service."],
             ].map(([title, text]) => (
               <div key={title} className="rounded-2xl border border-line bg-white p-6">
                 <h3 className="font-semibold">{title}</h3>

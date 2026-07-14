@@ -74,7 +74,7 @@ export default function LandscapingConceptPage() {
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.22em] text-[#b8d993]">
               Central New Jersey lawn & landscape care
             </p>
-            <h1 className="text-balance text-5xl font-black leading-[0.98] tracking-[-0.055em] sm:text-7xl">
+            <h1 className="text-balance text-4xl font-black leading-[0.98] tracking-[-0.04em] sm:text-7xl">
               Beautiful Lawns. Clean Edges. Reliable Service.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75 sm:text-xl">
@@ -245,7 +245,7 @@ export default function LandscapingConceptPage() {
             <p className="mt-5 leading-7 text-white/65">Tell us what your property needs and we will follow up with a clear next step.</p>
             <div className="mt-8 space-y-4 text-sm text-white/75">
               <p className="flex items-center gap-3"><Phone size={18} className="text-[#c9e6a5]" />(732) 555-0186</p>
-              <p className="flex items-center gap-3"><Mail size={18} className="text-[#c9e6a5]" />hello@evergreenedge.example</p>
+              <p className="flex min-w-0 items-center gap-3"><Mail size={18} className="shrink-0 text-[#c9e6a5]" /><span className="min-w-0 break-all">hello@evergreenedge.example</span></p>
               <p className="flex items-center gap-3"><Clock3 size={18} className="text-[#c9e6a5]" />Mon–Sat, 7 AM–6 PM</p>
             </div>
           </div>
@@ -267,7 +267,7 @@ export default function LandscapingConceptPage() {
       <footer className="bg-[#10291c] px-5 py-12 text-white sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 sm:grid-cols-3">
           <div><p className="text-xl font-black">Evergreen Edge Landscaping</p><p className="mt-2 text-sm text-white/50">Clean properties. Reliable service.</p></div>
-          <div className="text-sm text-white/60"><p>(732) 555-0186</p><p>hello@evergreenedge.example</p></div>
+          <div className="min-w-0 text-sm text-white/60"><p>(732) 555-0186</p><p className="break-all">hello@evergreenedge.example</p></div>
           <div className="text-sm text-white/60 sm:text-right"><p>Monroe Township · East Brunswick</p><p>Old Bridge · Jamesburg</p></div>
         </div>
         <div className="mx-auto mt-10 max-w-7xl border-t border-white/10 pt-5 text-xs text-white/40">Concept website by JWSites — this sample is not a real business.</div>

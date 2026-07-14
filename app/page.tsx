@@ -12,6 +12,7 @@ import {
   Search,
   ShieldCheck,
   Sparkles,
+  UserRound,
   Wrench,
 } from "lucide-react";
 import { Button } from "@/components/Button";
@@ -24,26 +25,32 @@ import { concepts } from "@/data/concepts";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "JWSites | Modern Websites for Local Businesses",
+    absolute: "JWSites | Business Websites & Personal Portfolios",
   },
   description:
-    "JWSites designs, hosts, and maintains modern websites for local businesses that want a professional online presence without the tech headaches.",
+    "JWSites creates polished websites for local businesses and personal portfolios for students, job seekers, creatives, and professionals.",
 };
 
 const values = [
   [Clock3, "Fast turnaround"],
   [MonitorSmartphone, "Mobile-friendly"],
-  [ShieldCheck, "Optional ongoing support"],
+  [ShieldCheck, "Updates included"],
   [Check, "Simple pricing"],
-  [Globe2, "Built for local business"],
+  [Globe2, "For businesses & individuals"],
 ] as const;
 
 const services = [
   {
     icon: Sparkles,
-    title: "Website design",
+    title: "Small-business websites",
     description:
-      "A polished, custom website shaped around your business—not a generic template.",
+      "A polished, custom website shaped around your business, services, and customers.",
+  },
+  {
+    icon: UserRound,
+    title: "Personal Portfolios",
+    description:
+      "A professional home for your experience, résumé, skills, projects, and creative work.",
   },
   {
     icon: Gauge,
@@ -59,9 +66,9 @@ const services = [
   },
   {
     icon: Wrench,
-    title: "Monthly updates",
+    title: "Ongoing updates",
     description:
-      "Need a photo, service, or business hour changed? We can handle it for you.",
+      "Reasonable changes to your existing content are included with ongoing service.",
   },
   {
     icon: BarChart3,
@@ -97,30 +104,30 @@ const process = [
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden bg-hero-glow pb-16 pt-32 sm:pb-24 sm:pt-40 lg:pb-28">
+      <section className="relative overflow-hidden bg-hero-glow pb-14 pt-32 sm:pb-20 sm:pt-36 lg:pb-24">
         <div className="container-site text-center">
           <span className="eyebrow animate-fade-up">
             Thoughtful websites. Straightforward service.
           </span>
           <h1 className="page-display mx-auto max-w-5xl animate-fade-up animate-delay-1">
-            Modern websites for{" "}
-            <span className="text-accent">local businesses.</span>
+            Websites for businesses. Portfolios for{" "}
+            <span className="text-accent">people.</span>
           </h1>
           <p className="body-large mx-auto mt-7 max-w-3xl animate-fade-up animate-delay-2">
-            JWSites designs, hosts, and maintains clean, professional websites
-            that help small businesses look credible online and turn visitors
-            into customers.
+            JWSites creates polished websites for local businesses and personal
+            portfolios for students, job seekers, developers, designers,
+            freelancers, creatives, and professionals.
           </p>
           <div className="mt-9 flex animate-fade-up animate-delay-2 flex-col items-center justify-center gap-3 sm:flex-row">
-            <Button href="/contact" arrow>
-              Get a Free Consultation
+            <Button href="/contact?project=small-business-website#contact-form" arrow>
+              Business Website
             </Button>
-            <Button href="/concepts" variant="secondary">
-              View Website Concepts
+            <Button href="/contact?project=personal-portfolio#contact-form" variant="secondary" arrow>
+              Personal Portfolio
             </Button>
           </div>
 
-          <div className="relative mx-auto mt-16 hidden max-w-5xl animate-fade-up animate-delay-2 sm:mt-20 sm:block">
+          <div className="relative mx-auto mt-12 hidden max-w-5xl animate-fade-up animate-delay-2 sm:mt-16 sm:block">
             <div className="absolute inset-x-16 bottom-0 h-24 bg-accent/20 blur-[70px]" />
             <div className="relative rounded-[1.5rem] border border-gray-200 bg-white p-2 shadow-soft sm:rounded-[2rem] sm:p-3">
               <div className="overflow-hidden rounded-[1.1rem] border border-line bg-surface sm:rounded-[1.4rem]">
@@ -164,7 +171,7 @@ export default function Home() {
       </section>
 
       <section className="border-y border-line bg-surface">
-        <div className="container-site grid grid-cols-2 gap-x-5 gap-y-7 py-8 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="container-site grid grid-cols-2 gap-x-5 gap-y-6 py-6 sm:grid-cols-3 lg:grid-cols-5">
           {values.map(([Icon, label]) => (
             <div key={label} className="flex items-center gap-2.5">
               <Icon size={18} className="shrink-0 text-accent" aria-hidden="true" />
@@ -179,9 +186,9 @@ export default function Home() {
           <SectionHeading
             eyebrow="Everything you need"
             title="A better website, without the usual headaches."
-            text="We handle the important pieces from first design to ongoing care, so you can stay focused on running your business."
+            text="We handle the important pieces from first design to ongoing care, whether the website represents a business or your own work."
           />
-          <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
@@ -233,9 +240,9 @@ export default function Home() {
               development, web hosting, and modern website design.
             </p>
             <p className="mt-4 leading-7 text-gray-400">
-              The goal is simple: give local businesses a clean, reliable
-              website without confusing technology or oversized agency
-              packages.
+              The goal is simple: give local businesses and individuals a
+              clean, reliable online presence without confusing technology or
+              oversized agency packages.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href="/about" arrow>
@@ -256,7 +263,7 @@ export default function Home() {
 
       <section className="section-pad bg-surface">
         <div className="container-site">
-          <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="Website Concepts"
               title="See what your business could look like online."
@@ -266,7 +273,7 @@ export default function Home() {
               Explore all concepts
             </Button>
           </div>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {concepts.map((concept) => (
               <ConceptCard key={concept.href} {...concept} />
             ))}
@@ -281,7 +288,7 @@ export default function Home() {
             title="From first conversation to launch."
             text="No confusing handoffs or drawn-out agency process. Just clear communication and steady progress."
           />
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-10 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
             {process.map(([number, title, description], index) => (
               <article key={number} className="relative">
                 <div className="mb-6 flex items-center">
@@ -309,12 +316,15 @@ export default function Home() {
         <div className="container-site">
           <SectionHeading
             eyebrow="Simple, transparent pricing"
-            title="The same premium website for every client."
-            text="Your custom website is a one-time $500 investment. Choose Starter, Professional, or Premium for ongoing hosting, maintenance, support, edits, SEO, and domain service after launch."
+            title="Clear options, with routine updates included."
+            text="Small-business websites begin with a one-time setup and $49 monthly service. Personal portfolios have student and professional options with annual hosting and support."
             align="center"
           />
-          <div className="mt-12">
+          <div className="mt-10">
             <PricingPreview />
+            <p className="mt-5 text-center text-sm font-medium text-accent-dark">
+              Limited founding-client offer: the first three small-business websites receive a $500 setup price instead of the standard $750.
+            </p>
           </div>
         </div>
       </section>

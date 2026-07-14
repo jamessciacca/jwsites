@@ -21,8 +21,8 @@ export function DemoCTA({
   buttonClassName = "bg-white text-ink",
 }: DemoCTAProps) {
   return (
-    <section className="px-5 py-16 sm:px-8 sm:py-20">
-      <div className={`mx-auto max-w-7xl overflow-hidden rounded-[2.5rem] px-7 py-16 text-center sm:px-12 sm:py-20 ${className}`}>
+    <section className="px-5 py-14 sm:px-8 sm:py-16">
+      <div className={`mx-auto max-w-7xl overflow-hidden rounded-[2rem] px-7 py-12 text-center sm:px-12 sm:py-16 ${className}`}>
         <div className="mx-auto max-w-3xl">
           {eyebrow && (
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] opacity-65">

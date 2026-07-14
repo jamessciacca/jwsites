@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { pricingSelections } from "@/data/pricing";
+import { pricingSelections, projectTypes } from "@/data/pricing";
 
 export const runtime = "nodejs";
 
@@ -10,6 +10,7 @@ type ContactPayload = {
   email?: unknown;
   phone?: unknown;
   businessType?: unknown;
+  projectType?: unknown;
   website?: unknown;
   preferredDomain?: unknown;
   message?: unknown;
@@ -61,6 +62,10 @@ export async function POST(request: Request) {
     const email = readField(body.email, 160);
     const phone = readField(body.phone, 50);
     const businessType = readField(body.businessType, 120);
+    const requestedProjectType = readField(body.projectType, 120);
+    const projectType = projectTypes.find(
+      (project) => project.name === requestedProjectType,
+    )?.name;
     const website = readField(body.website, 300);
     const preferredDomain = readField(body.preferredDomain, 250);
     const message = readField(body.message, 5000);
@@ -69,11 +74,11 @@ export async function POST(request: Request) {
       pricingSelections.find((plan) => plan.name === requestedPlan)?.name ||
       "General website inquiry";
 
-    if (!name || !business || !email || !phone || !businessType || !message) {
+    if (!name || !email || !phone || !projectType || !message) {
       return NextResponse.json(
         {
           error:
-            "Please complete your name, business name, email, phone number, business type, and project description.",
+            "Please complete your name, email, phone number, project type, and project description.",
         },
         { status: 400 },
       );
@@ -109,11 +114,12 @@ export async function POST(request: Request) {
     const resend = new Resend(apiKey);
     const rows = [
       ["Selected Package", selectedPlan],
+      ["Project Type", projectType],
       ["Name", name],
-      ["Business Name", business],
+      ["Business, School, or Organization", business || "Not provided"],
       ["Email", email],
       ["Phone", phone],
-      ["Business Type", businessType],
+      ["Industry or Professional Field", businessType || "Not provided"],
       ["Current Website", website || "Not provided"],
       ["Preferred Domain", preferredDomain || "Not provided"],
       ["Additional Details", message],
@@ -133,7 +139,7 @@ export async function POST(request: Request) {
       from: `JWSites Website <${fromEmail}>`,
       to: CONTACT_TO_EMAIL,
       replyTo: email,
-      subject: `New JWSites inquiry — ${selectedPlan} — ${business}`,
+      subject: `New JWSites inquiry — ${projectType} — ${business || name}`,
       html: `
         <div style="font-family:Arial,sans-serif;color:#0a0a0b;max-width:680px;margin:0 auto">
           <h1 style="font-size:24px;margin-bottom:8px">New website inquiry</h1>

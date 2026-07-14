@@ -27,7 +27,7 @@ export function DemoHero({
   buttonClassName = "bg-ink text-white",
 }: DemoHeroProps) {
   return (
-    <section className={`overflow-hidden px-5 py-16 sm:px-8 sm:py-24 lg:py-28 ${className}`}>
+    <section className={`overflow-hidden px-5 py-14 sm:px-8 sm:py-20 lg:py-24 ${className}`}>
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="animate-fade-up">
           <p className="mb-5 text-xs font-bold uppercase tracking-[0.2em] opacity-65">

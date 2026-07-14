@@ -6,7 +6,7 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Request a free website consultation with JWSites. Tell us about your local business and get clear guidance on the right website option.",
+    "Request a free website consultation with JWSites for a small-business website, personal portfolio, redesign, or custom project.",
 };
 
 export default function ContactPage() {
@@ -14,10 +14,10 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Free consultation"
-        title="Tell us about your business."
-        text="Tell us about your business and we’ll help you figure out the best website option."
+        title="Tell us what you want to build."
+        text="Share your business or portfolio goals and we’ll help you figure out the best website option."
       />
-      <section className="pb-20 sm:pb-28">
+      <section className="pb-16 sm:pb-20">
         <div className="container-site grid gap-8 lg:grid-cols-[0.72fr_1.28fr]">
           <aside className="rounded-[2rem] bg-ink p-8 text-white sm:p-10">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#a5a6ff]">

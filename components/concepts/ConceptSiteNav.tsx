@@ -19,8 +19,8 @@ export function ConceptSiteNav({
 }: ConceptSiteNavProps) {
   return (
     <nav className={`border-b border-current/10 px-5 sm:px-8 ${className}`} aria-label={`${name} concept navigation`}>
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6">
-        <Link href="#top" className="text-xl font-bold tracking-[-0.04em]">
+      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between gap-3 py-3 sm:gap-6">
+        <Link href="#top" className="min-w-0 text-base font-bold tracking-[-0.04em] sm:text-xl">
           {name}
         </Link>
         <div className="hidden items-center gap-6 md:flex">
@@ -36,7 +36,7 @@ export function ConceptSiteNav({
         </div>
         <Link
           href={ctaHref}
-          className={`rounded-full px-5 py-2.5 text-sm font-bold transition hover:-translate-y-0.5 ${buttonClassName}`}
+          className={`shrink-0 rounded-full px-4 py-2.5 text-center text-xs font-bold transition hover:-translate-y-0.5 sm:px-5 sm:text-sm ${buttonClassName}`}
         >
           {ctaLabel}
         </Link>

@@ -9,7 +9,7 @@ import {
   PackageCheck,
   Send,
 } from "lucide-react";
-import { pricingSelections } from "@/data/pricing";
+import { pricingSelections, projectTypes } from "@/data/pricing";
 
 type FormStatus =
   | { type: "idle"; message: "" }
@@ -23,6 +23,7 @@ const selectedPlanStorageKey = "jwsites-selected-plan";
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedProjectType, setSelectedProjectType] = useState("");
   const [status, setStatus] = useState<FormStatus>({
     type: "idle",
     message: "",
@@ -30,10 +31,17 @@ export function ContactForm() {
 
   useEffect(() => {
     const planId = new URLSearchParams(window.location.search).get("plan");
+    const projectId = new URLSearchParams(window.location.search).get("project");
     const planFromUrl = pricingSelections.find((plan) => plan.id === planId);
+    const projectFromUrl = projectTypes.find((project) => project.id === projectId);
+
+    if (projectFromUrl) setSelectedProjectType(projectFromUrl.name);
 
     if (planFromUrl) {
       setSelectedPlan(planFromUrl.name);
+      setSelectedProjectType(
+        planId?.includes("portfolio") ? "Personal portfolio" : "Small-business website",
+      );
       window.localStorage.setItem(selectedPlanStorageKey, planFromUrl.id);
       return;
     }
@@ -45,6 +53,9 @@ export function ContactForm() {
 
     if (storedPlan) {
       setSelectedPlan(storedPlan.name);
+      setSelectedProjectType(
+        storedPlan.id.includes("portfolio") ? "Personal portfolio" : "Small-business website",
+      );
     }
   }, []);
 
@@ -158,10 +169,10 @@ export function ContactForm() {
               {selectedPlan}
             </p>
             <Link
-              href="/pricing#monthly-plans"
+              href="/pricing"
               className="text-xs font-semibold text-accent underline decoration-accent/30 underline-offset-4 transition hover:text-accent-dark"
             >
-              Change Plan
+              Change Package
             </Link>
           </div>
         </div>
@@ -182,16 +193,15 @@ export function ContactForm() {
           />
         </label>
         <label className="text-sm font-medium text-gray-700">
-          Business Name <span className="text-accent">*</span>
+          Business, School, or Organization <span className="text-muted">(optional)</span>
           <input
             className={inputClasses}
             type="text"
             name="business"
             autoComplete="organization"
-            placeholder="Your business"
+            placeholder="Your business, school, or organization"
             maxLength={120}
             disabled={isSubmitting}
-            required
           />
         </label>
         <label className="text-sm font-medium text-gray-700">
@@ -221,15 +231,30 @@ export function ContactForm() {
           />
         </label>
         <label className="text-sm font-medium text-gray-700 sm:col-span-2">
-          Business Type <span className="text-accent">*</span>
+          Project Type <span className="text-accent">*</span>
+          <select
+            className={inputClasses}
+            name="projectType"
+            value={selectedProjectType}
+            onChange={(event) => setSelectedProjectType(event.target.value)}
+            disabled={isSubmitting}
+            required
+          >
+            <option value="">Choose a project type</option>
+            {projectTypes.map((project) => (
+              <option key={project.id} value={project.name}>{project.name}</option>
+            ))}
+          </select>
+        </label>
+        <label className="text-sm font-medium text-gray-700 sm:col-span-2">
+          Industry or Professional Field <span className="text-muted">(optional)</span>
           <input
             className={inputClasses}
             type="text"
             name="businessType"
-            placeholder="Landscaping, restaurant, dental office…"
+            placeholder="Landscaping, software development, graphic design…"
             maxLength={120}
             disabled={isSubmitting}
-            required
           />
         </label>
       </div>
@@ -253,7 +278,7 @@ export function ContactForm() {
           className={inputClasses}
           type="text"
           name="preferredDomain"
-          placeholder="yourbusiness.com"
+          placeholder="yourbusiness.com or yourname.com"
           maxLength={250}
           disabled={isSubmitting}
         />
@@ -265,7 +290,7 @@ export function ContactForm() {
         <textarea
           className={`${inputClasses} min-h-36 resize-y`}
           name="message"
-          placeholder="Tell us about your business, what you need, and what you would like your new website to accomplish."
+          placeholder="Tell us about your business or professional goals, what you need, and what you would like your new website to accomplish."
           maxLength={5000}
           disabled={isSubmitting}
           required

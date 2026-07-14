@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 const navigation = [
   ["Home", "/"],
   ["Services", "/services"],
+  ["Personal Portfolios", "/portfolio"],
   ["Pricing", "/pricing"],
   ["Concepts", "/concepts"],
   ["About", "/about"],
@@ -11,24 +12,26 @@ const navigation = [
 ];
 
 const services = [
-  ["Website Design", "/services"],
+  ["Small-Business Websites", "/services"],
+  ["Personal Portfolios", "/portfolio"],
   ["Website Redesigns", "/services"],
   ["Hosting & Maintenance", "/services"],
   ["Website Pricing", "/pricing"],
   ["Basic SEO", "/services"],
+  ["Portfolio Examples", "/portfolio/examples"],
 ];
 
 export function Footer() {
   return (
     <footer className="border-t border-line bg-ink text-white">
-      <div className="container-site grid gap-12 py-16 sm:py-20 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container-site grid gap-10 py-14 sm:py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <Link href="/" className="text-2xl font-bold tracking-[-0.04em]">
             JW<span className="text-[#8b8cff]">Sites</span>
           </Link>
           <p className="mt-5 max-w-xs text-sm leading-6 text-gray-400">
-            Modern, reliable websites that help local businesses look
-            professional and turn more visitors into customers.
+            Modern websites for local businesses and polished personal
+            portfolios for individuals.
           </p>
         </div>
 
@@ -67,8 +70,8 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-semibold">Ready when you are.</h2>
           <p className="mt-5 text-sm leading-6 text-gray-400">
-            Tell us about your business. We’ll help you find the right website
-            option without the hard sell.
+            Tell us about your business or portfolio goals. We’ll help you find
+            the right website option without the hard sell.
           </p>
           <Link
             href="/contact"
@@ -81,7 +84,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="container-site flex flex-col gap-2 py-6 text-xs text-gray-500 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} JWSites. All rights reserved.</p>
-          <p>Built for local business.</p>
+          <p>Built for businesses and individuals.</p>
         </div>
       </div>
     </footer>

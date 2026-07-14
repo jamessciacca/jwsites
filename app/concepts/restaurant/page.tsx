@@ -104,7 +104,7 @@ export default function RestaurantConceptPage() {
             <p className="mb-5 text-xs font-bold uppercase tracking-[0.24em] text-[#e6c284]">
               Family recipes · Fresh ingredients · Warm hospitality
             </p>
-            <h1 className="text-balance font-serif text-5xl leading-[0.98] tracking-[-0.04em] sm:text-7xl lg:text-8xl">
+            <h1 className="text-balance font-serif text-4xl leading-[0.98] tracking-[-0.035em] sm:text-7xl lg:text-8xl">
               Authentic Italian Dining, Made Fresh Daily
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/75 sm:text-xl">

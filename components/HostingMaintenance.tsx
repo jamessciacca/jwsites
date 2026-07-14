@@ -8,21 +8,21 @@ import {
 } from "lucide-react";
 
 const smallUpdates = [
-  "Change hours",
-  "Change phone number or address",
-  "Swap photos",
-  "Update services",
-  "Add announcements",
-  "Minor text changes",
+  "Existing text and images",
+  "Résumé files and projects",
+  "Skills and contact details",
+  "Business hours and services",
+  "Testimonials",
+  "Other existing content",
 ];
 
 const largerChanges = [
-  "New full pages",
-  "Major redesigns",
-  "Booking systems",
-  "Payment features",
-  "Advanced SEO campaigns",
-  "Custom integrations",
+  "New pages",
+  "Major section redesigns",
+  "Complete website redesigns",
+  "Ecommerce or booking systems",
+  "Custom applications or integrations",
+  "Large-scale content entry or new functionality",
 ];
 
 export function HostingMaintenance() {
@@ -35,21 +35,21 @@ export function HostingMaintenance() {
               Hosting &amp; Maintenance
             </span>
             <h2 className="text-balance text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
-              Ongoing support, when you want it.
+              Ongoing care that keeps things simple.
             </h2>
             <p className="mt-6 text-pretty text-lg leading-8 text-gray-400">
-              With a monthly support plan, JWSites can host and manage your
-              website after launch. You do not need to learn a website editor
-              or handle technical maintenance yourself.
+              Small-business monthly service and portfolio annual plans include
+              hosting, security, maintenance, support, and reasonable content
+              updates. You do not need to handle the technical side yourself.
             </p>
             <p className="mt-5 text-pretty leading-7 text-gray-400">
-              When something needs to change, simply email or text us. We make
-              the update and keep your website current, secure, and working
-              smoothly.
+              When existing content needs to change, simply get in touch. We
+              make reasonable updates and keep your website current, secure,
+              and working smoothly.
             </p>
             <p className="mt-5 text-sm leading-6 text-gray-500">
-              Monthly service is optional. The website remains your one-time
-              purchase whether or not you choose ongoing support.
+              Ordinary updates are included in the ongoing plan, so there is no
+              separate charge for routine content changes.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-gray-300">
@@ -75,11 +75,11 @@ export function HostingMaintenance() {
                 </span>
                 <div>
                   <h3 className="text-xl font-semibold tracking-[-0.025em]">
-                    Small updates are easy
+                    Reasonable content updates are included
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-gray-400">
-                    Maintenance plans are designed for the everyday changes
-                    that keep your business information accurate.
+                    Ongoing plans cover the everyday changes that keep business
+                    information and portfolio content accurate.
                   </p>
                 </div>
               </div>
@@ -105,11 +105,11 @@ export function HostingMaintenance() {
                 </span>
                 <div>
                   <h3 className="text-xl font-semibold tracking-[-0.025em]">
-                    Larger additions are quoted separately
+                    New project work is discussed first
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-muted">
-                    Bigger changes require more planning and build time. We
-                    explain the scope and price clearly before starting.
+                    Larger additions and new functionality can be quoted
+                    separately before any work begins.
                   </p>
                 </div>
               </div>

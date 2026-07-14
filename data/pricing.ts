@@ -1,97 +1,86 @@
-export const customWebsiteOffer = {
-  planId: "website-build-only",
-  name: "Custom Website",
-  contactName: "Custom Website — Build Only",
-  price: "$500",
-  label: "One-Time Investment",
+export const smallBusinessWebsite = {
+  planId: "small-business-website",
+  name: "Small-Business Website",
+  standardPrice: "$750",
+  foundingPrice: "$500",
+  ongoingPrice: "$49",
+  ongoingCadence: "/month",
   description:
-    "One professionally designed custom website, built around your business and ready to launch.",
+    "A polished, mobile-friendly website for a local business, with ongoing care included.",
   features: [
-    "Fully custom website",
-    "Mobile responsive",
-    "Fast loading",
-    "Contact form",
-    "Modern professional design",
-    "Google Maps integration",
-    "Social media links",
-    "Basic on-page SEO",
-    "Domain connection setup",
-    "Launch assistance",
+    "Up to five pages",
+    "Custom, mobile-friendly design",
+    "Contact or estimate form",
+    "Basic local SEO setup",
+    "Hosting, security, and maintenance",
+    "Reasonable content updates included",
+    "Direct support",
   ],
 };
 
-export const monthlyPlans = [
+export const portfolioPlans = [
   {
-    planId: "starter-plan",
-    name: "Starter Plan",
-    price: "$49",
-    cadence: "/mo",
+    planId: "student-portfolio",
+    name: "Student Portfolio",
+    price: "$299",
+    ongoingPrice: "$99",
+    ongoingCadence: "/year",
     description:
-      "Best for small businesses that want a simple, professional online presence.",
-    buildPrice: "$500 one-time website build",
-    domain: "Domain paid separately at registration cost",
+      "A focused one-page portfolio for students and early-career job seekers.",
     features: [
-      "Fast, secure hosting",
-      "SSL setup",
-      "Basic maintenance",
+      "One-page portfolio",
+      "About, projects, skills, résumé, and contact sections",
+      "Custom domain connection",
       "Mobile-friendly design",
-      "Contact form setup",
-      "Basic support",
+      "Reasonable content updates included",
+      "Hosting and support",
     ],
-    cta: "Choose Starter",
   },
   {
-    planId: "professional-plan",
-    name: "Professional Plan",
-    price: "$79",
-    cadence: "/mo",
+    planId: "professional-portfolio",
+    name: "Professional Portfolio",
+    price: "$499",
+    ongoingPrice: "$149",
+    ongoingCadence: "/year",
     description:
-      "Recommended for most local businesses that want stronger visibility and faster ongoing help.",
-    buildPrice: "$500 one-time website build",
-    domain: "First-year domain included; JWSites purchases and configures it",
+      "A more customized portfolio for established professionals, freelancers, developers, designers, and creatives.",
     features: [
-      "Everything in Starter",
-      "Stronger SEO setup",
-      "Google Business Profile support",
-      "Priority edits",
-      "Analytics setup",
-      "Improved content sections",
+      "Up to four pages",
+      "More customized design",
+      "Project case studies",
+      "Résumé download",
+      "Contact form",
+      "Reasonable content updates included",
+      "Hosting and support",
     ],
-    cta: "Choose Professional",
-    featured: true,
-  },
-  {
-    planId: "premium-plan",
-    name: "Premium Plan",
-    price: "$119",
-    cadence: "/mo",
-    description:
-      "Best for businesses that want the most hands-off website management and ongoing growth support.",
-    buildPrice: "$500 one-time website build",
-    domain: "First-year domain included; JWSites purchases and configures it",
-    features: [
-      "Everything in Professional",
-      "Ongoing SEO improvements",
-      "Monthly content updates",
-      "Faster support",
-      "Performance checks",
-      "Expanded page and section updates",
-    ],
-    cta: "Choose Premium",
   },
 ];
 
+export const complexBusinessWebsite = {
+  planId: "advanced-business-website",
+  name: "More Involved Business Website",
+  price: "Starting at $1,200",
+  description:
+    "For projects involving booking systems, extensive galleries or menus, ecommerce, or custom functionality.",
+};
+
 export const pricingSelections = [
-  {
-    id: customWebsiteOffer.planId,
-    name: customWebsiteOffer.contactName,
-  },
-  ...monthlyPlans.map((plan) => ({
-    id: plan.planId,
-    name: plan.name,
-  })),
+  { id: smallBusinessWebsite.planId, name: smallBusinessWebsite.name },
+  ...portfolioPlans.map((plan) => ({ id: plan.planId, name: plan.name })),
+  { id: complexBusinessWebsite.planId, name: complexBusinessWebsite.name },
+];
+
+export const projectTypes = [
+  { id: "small-business-website", name: "Small-business website" },
+  { id: "personal-portfolio", name: "Personal portfolio" },
+  { id: "website-redesign", name: "Website redesign" },
+  { id: "other", name: "Other" },
 ];
 
 export function getPlanContactHref(planId: string) {
   return `/contact?plan=${encodeURIComponent(planId)}#contact-form`;
+}
+
+export function getProjectContactHref(projectId: string) {
+  return `/contact?project=${encodeURIComponent(projectId)}#contact-form`;
 }

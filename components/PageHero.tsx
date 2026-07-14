@@ -6,7 +6,7 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, text }: PageHeroProps) {
   return (
-    <section className="overflow-hidden bg-hero-glow pb-20 pt-32 sm:pb-28 sm:pt-40">
+    <section className="overflow-hidden bg-hero-glow pb-16 pt-32 sm:pb-20 sm:pt-36">
       <div className="container-site text-center">
         <span className="eyebrow animate-fade-up">{eyebrow}</span>
         <h1 className="page-display mx-auto max-w-5xl animate-fade-up animate-delay-1">

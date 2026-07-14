@@ -48,4 +48,36 @@ export const demoImages = {
       pexels(7781845, 1200),
     ],
   },
+  portfolios: {
+    art: {
+      hero: pexels(3777876, 2000),
+      studio: pexels(3777876, 1400),
+      work: [
+        pexels(1585325, 1200),
+        pexels(1183992, 1200),
+        pexels(1646953, 1200),
+        pexels(1047540, 1200),
+      ],
+    },
+    professional: {
+      hero: pexels(3184465, 2000),
+      profile: pexels(1181686, 1400),
+      work: [
+        pexels(3184292, 1200),
+        pexels(3182812, 1200),
+        pexels(3184639, 1200),
+        pexels(3183150, 1200),
+      ],
+    },
+    developer: {
+      hero: pexels(577585, 2000),
+      profile: pexels(3861969, 1400),
+      work: [
+        pexels(1181244, 1200),
+        pexels(3861972, 1200),
+        pexels(270348, 1200),
+        pexels(1181675, 1200),
+      ],
+    },
+  },
 };

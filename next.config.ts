@@ -14,6 +14,21 @@ const nextConfig: NextConfig = {
         destination: "/concepts/barber",
         permanent: true,
       },
+      {
+        source: "/portfolio/examples/art",
+        destination: "/concepts/art-portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/examples/professional",
+        destination: "/concepts/professional-portfolio",
+        permanent: true,
+      },
+      {
+        source: "/portfolio/examples/developer",
+        destination: "/concepts/developer-portfolio",
+        permanent: true,
+      },
     ];
   },
   images: {
