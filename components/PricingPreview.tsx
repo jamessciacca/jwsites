@@ -20,7 +20,7 @@ export function PricingPreview({
           <div className="rounded-2xl bg-ink p-5 text-white">
             <BriefcaseBusiness className="text-[#a5a6ff]" size={21} />
             <p className="mt-4 font-semibold">Small-Business Website</p>
-            <p className="mt-2 text-2xl font-semibold">{smallBusinessWebsite.standardPrice} <span className="text-xs font-normal text-gray-400">setup</span></p>
+            <p className="mt-2 text-2xl font-semibold">{smallBusinessWebsite.price} <span className="text-xs font-normal text-gray-400">setup</span></p>
             <p className="mt-1 text-sm text-gray-400">{smallBusinessWebsite.ongoingPrice}{smallBusinessWebsite.ongoingCadence}</p>
           </div>
           <div className="rounded-2xl border border-accent/15 bg-accent/[0.04] p-5">

@@ -1,8 +1,7 @@
 export const smallBusinessWebsite = {
   planId: "small-business-website",
   name: "Small-Business Website",
-  standardPrice: "$750",
-  foundingPrice: "$500",
+  price: "$500",
   ongoingPrice: "$49",
   ongoingCadence: "/month",
   description:

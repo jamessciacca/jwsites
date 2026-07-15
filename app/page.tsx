@@ -322,9 +322,6 @@ export default function Home() {
           />
           <div className="mt-10">
             <PricingPreview />
-            <p className="mt-5 text-center text-sm font-medium text-accent-dark">
-              Limited founding-client offer: the first three small-business websites receive a $500 setup price instead of the standard $750.
-            </p>
           </div>
         </div>
       </section>

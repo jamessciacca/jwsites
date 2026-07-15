@@ -1,4 +1,4 @@
-import { Check, Sparkles } from "lucide-react";
+import { Check } from "lucide-react";
 import { Button } from "./Button";
 import { getPlanContactHref, smallBusinessWebsite } from "@/data/pricing";
 
@@ -10,8 +10,7 @@ export function CustomWebsiteCard() {
         <div className="flex flex-col justify-between">
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-[#a5a6ff]/35 bg-[#a5a6ff]/10 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-[#c6c7ff]">
-              <Sparkles size={14} />
-              First three clients
+              Flat business setup
             </span>
             <h2 className="mt-6 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl">
               {smallBusinessWebsite.name}
@@ -21,16 +20,12 @@ export function CustomWebsiteCard() {
             </p>
           </div>
           <div className="mt-8">
-            <p className="text-sm text-gray-400 line-through">Standard setup {smallBusinessWebsite.standardPrice}</p>
             <div className="mt-1 flex flex-wrap items-end gap-x-2 gap-y-1">
               <span className="text-6xl font-semibold tracking-[-0.06em] sm:text-8xl">
-                {smallBusinessWebsite.foundingPrice}
+                {smallBusinessWebsite.price}
               </span>
               <span className="mb-3 text-sm text-gray-400">one time</span>
             </div>
-            <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[#a5a6ff]">
-              Limited founding-client setup price
-            </p>
             <p className="mt-4 text-xl font-semibold">
               {smallBusinessWebsite.ongoingPrice}<span className="text-sm font-normal text-gray-400">{smallBusinessWebsite.ongoingCadence}</span>
             </p>
@@ -50,7 +45,7 @@ export function CustomWebsiteCard() {
             ))}
           </ul>
           <p className="mt-7 rounded-xl border border-white/10 bg-white/[0.05] px-4 py-3 text-xs leading-5 text-gray-300">
-            The founding-client offer is limited to the first three clients. The standard setup price is {smallBusinessWebsite.standardPrice}; ongoing service remains {smallBusinessWebsite.ongoingPrice}{smallBusinessWebsite.ongoingCadence}.
+            One clear setup price for a polished small-business website, with ongoing hosting, maintenance, support, and reasonable content updates at {smallBusinessWebsite.ongoingPrice}{smallBusinessWebsite.ongoingCadence}.
           </p>
           <Button href={getPlanContactHref(smallBusinessWebsite.planId)} className="mt-8 w-full" arrow>
             Choose Business Website
