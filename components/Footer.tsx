@@ -6,7 +6,7 @@ const navigation = [
   ["Services", "/services"],
   ["Personal Portfolios", "/portfolio"],
   ["Pricing", "/pricing"],
-  ["Concepts", "/concepts"],
+  ["Work", "/work"],
   ["About", "/about"],
   ["Contact", "/contact"],
 ];
@@ -18,7 +18,7 @@ const services = [
   ["Hosting & Maintenance", "/services"],
   ["Website Pricing", "/pricing"],
   ["Basic SEO", "/services"],
-  ["Portfolio Examples", "/portfolio/examples"],
+  ["Work Examples", "/work"],
 ];
 
 export function Footer() {

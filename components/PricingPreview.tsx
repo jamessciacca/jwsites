@@ -27,7 +27,7 @@ export function PricingPreview({
             <UserRound className="text-accent" size={21} />
             <p className="mt-4 font-semibold">Personal Portfolios</p>
             <p className="mt-2 text-2xl font-semibold">From {portfolioPlans[0].price}</p>
-            <p className="mt-1 text-sm text-muted">Annual hosting and support</p>
+            <p className="mt-1 text-sm text-muted">Monthly hosting and support</p>
           </div>
         </div>
       </div>

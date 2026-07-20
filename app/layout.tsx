@@ -66,9 +66,9 @@ export default function RootLayout({
                 "@type": "OfferCatalog",
                 name: "Website services",
                 itemListElement: [
-                  { "@type": "Offer", name: "Small-Business Website", price: "500", priceCurrency: "USD" },
-                  { "@type": "Offer", name: "Student Portfolio", price: "299", priceCurrency: "USD" },
-                  { "@type": "Offer", name: "Professional Portfolio", price: "499", priceCurrency: "USD" },
+                  { "@type": "Offer", name: "Small-Business Website", price: "400", priceCurrency: "USD" },
+                  { "@type": "Offer", name: "Student Portfolio", price: "100", priceCurrency: "USD" },
+                  { "@type": "Offer", name: "Professional Portfolio", price: "250", priceCurrency: "USD" },
                 ],
               },
             }),

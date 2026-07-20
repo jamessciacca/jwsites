@@ -1,8 +1,8 @@
 export const smallBusinessWebsite = {
   planId: "small-business-website",
   name: "Small-Business Website",
-  price: "$500",
-  ongoingPrice: "$49",
+  price: "$400",
+  ongoingPrice: "$40",
   ongoingCadence: "/month",
   description:
     "A polished, mobile-friendly website for a local business, with ongoing care included.",
@@ -21,9 +21,9 @@ export const portfolioPlans = [
   {
     planId: "student-portfolio",
     name: "Student Portfolio",
-    price: "$299",
-    ongoingPrice: "$99",
-    ongoingCadence: "/year",
+    price: "$100",
+    ongoingPrice: "$10",
+    ongoingCadence: "/month",
     description:
       "A focused one-page portfolio for students and early-career job seekers.",
     features: [
@@ -38,9 +38,9 @@ export const portfolioPlans = [
   {
     planId: "professional-portfolio",
     name: "Professional Portfolio",
-    price: "$499",
-    ongoingPrice: "$149",
-    ongoingCadence: "/year",
+    price: "$250",
+    ongoingPrice: "$15",
+    ongoingCadence: "/month",
     description:
       "A more customized portfolio for established professionals, freelancers, developers, designers, and creatives.",
     features: [

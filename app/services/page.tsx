@@ -109,7 +109,7 @@ export default function ServicesPage() {
           <div className="mt-10">
             <PricingPreview
               heading="One clear path for each kind of project."
-              text="Business websites include ongoing monthly care. Portfolio options include annual hosting, support, and reasonable content updates."
+              text="Business websites include ongoing monthly care. Portfolio options include monthly hosting, support, and reasonable content updates."
             />
           </div>
         </div>

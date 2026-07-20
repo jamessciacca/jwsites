@@ -17,8 +17,8 @@ const tones = {
 
 export function ConceptBanner({
   tone = "warm",
-  backHref = "/concepts",
-  backLabel = "Back to JWSites",
+  backHref = "/work#concept-sites",
+  backLabel = "Back to Work",
   ctaHref = "/contact",
   ctaLabel = "Start a site like this",
 }: ConceptBannerProps) {

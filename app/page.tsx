@@ -265,12 +265,12 @@ export default function Home() {
         <div className="container-site">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
-              eyebrow="Website Concepts"
-              title="See what your business could look like online."
-              text="Explore sample websites created by JWSites to show what we can build for restaurants, landscaping companies, barber shops, and other local businesses."
+              eyebrow="Website Work"
+              title="See real work and concept examples."
+              text="Explore live projects, sample business websites, and portfolio examples that show what JWSites can build and maintain."
             />
-            <Button href="/concepts" variant="secondary" arrow>
-              Explore all concepts
+            <Button href="/work" variant="secondary" arrow>
+              Explore the work
             </Button>
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -317,7 +317,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Simple, transparent pricing"
             title="Clear options, with routine updates included."
-            text="Small-business websites begin with a one-time setup and $49 monthly service. Personal portfolios have student and professional options with annual hosting and support."
+            text="Small-business websites begin with a one-time setup and $40 monthly service. Personal portfolios have student and professional options with monthly hosting and support."
             align="center"
           />
           <div className="mt-10">
